@@ -1,0 +1,91 @@
+ANS->(1) BUBBLE SORET  V/S  SELCTION SORT
+Bubble Sort- It is the sorting technique in which we compare two adjacent elements and swap them until we get our intended sequence.
+Just like the movement of air bubbles in the water that rise up to the surface, each element of the array move to the end in each iteration Therefore,
+it is called a bubble sort.
+Selection Sort- It is the sorting technique in which we select the first element of our list as the minimum element and 
+then try to find out the smallest element in out list and then perform swapping.
+By this the smallest element is placed at the first position in our list and then we solve the same
+technique for all the unsorted elements at the right of the swapped element.
+We continue this technique until we get our intended sequence
+
+# Selection sort in Python
+def selectionSort(array, size):
+   
+    for step in range(size):
+        min_idx = step
+
+        for i in range(step + 1, size):
+         
+            # to sort in descending order, change > to < in this line
+            # select the minimum element in each loop
+            if array[i] < array[min_idx]:
+                min_idx = i
+         
+        # put min at the correct position
+        (array[step], array[min_idx]) = (array[min_idx], array[step])
+
+
+data = [-2, 45, 0, 11, -9]
+size = len(data)
+selectionSort(data, size)
+print('Sorted Array in Ascending Order:')
+print(data)
+
+
+
+# Bubble sort in Python
+
+def bubbleSort(array):
+    
+  # loop to access each array element
+  for i in range(len(array)):
+
+    # loop to compare array elements
+    for j in range(0, len(array) - i - 1):
+
+      # compare two adjacent elements
+      # change > to < to sort in descending order
+      if array[j] > array[j + 1]:
+
+        # swapping elements if elements
+        # are not in the intended order
+        temp = array[j]
+        array[j] = array[j+1]
+        array[j+1] = temp
+
+
+data = [-2, 45, 0, 11, -9]
+
+bubbleSort(data)
+
+print('Sorted Array in Ascending Order:')
+print(data)
+
+BUBBLE SORT (COMPARISONS)
+•	Bubble Sort compares the adjacent elements.
+ 
+•	Hence, the number of comparisons is
+•	(n-1)+(n-2)+(n-3)+…………+1=n(n-1)/2
+•	Which is nearly equal to n2
+
+
+
+SELECTION SORT (COMPARISONS)
+Number of comparisons: (n - 1) + (n - 2) + (n - 3) + ..... + 1 = n(n - 1) / 2 nearly equals to n2
+
+
+N U M B E R   O  F   C O M P A R I S O N S
+Selection sort: As we can see from the code that to find the minimum element at every iteration, we will have to traverse the entire unsorted array.
+Bubble sort: In this also we can see from the code	that we will stop the procedure after a single pass
+
+
+N U M B E R  O  F  S W A P S
+Selection Sort- We see in the code that in Selection sort i-th smallest element is selected and is placed at i-th position.
+Bubble Sort- Whereas Bubble sort repeatedly compares and swaps (if needed) adjacent elements in every pass.
+
+
+IN – P L A C E   A N D  O U  T -P L  A C E  I M P L E M E N T A T I O N S
+Both Selection Sort and Bubble Sort are In Place sorting algorithms as they require O(1) extra space for exchanging elements.
+So, they can’t be compared on the basis of In Place and Out Place sorting algorithms as both are In Place.
+Only Merge Sort requires O(N) extra space and comes under the category of Out Place sorting algorithms.
+
